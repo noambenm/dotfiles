@@ -11,3 +11,9 @@ vim.api.nvim_create_autocmd('TextYankPost', {
     vim.hl.on_yank()
   end,
 })
+
+-- Save on text change and when leaving insert mode
+vim.api.nvim_create_autocmd({ "TextChanged", "InsertLeave" }, {
+  pattern = "*",
+  command = "silent! update",
+})
