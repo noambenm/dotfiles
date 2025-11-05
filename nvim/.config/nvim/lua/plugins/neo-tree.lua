@@ -15,14 +15,18 @@ return {
   },
   opts = {
     event_handlers = {
-        {
-          event = "neo_tree_buffer_enter",
-          handler = function()
-            vim.opt_local.relativenumber = true
-          end,
-        }
+      {
+        event = "neo_tree_buffer_enter",
+        handler = function()
+          vim.opt_local.relativenumber = true
+        end,
+      }
     },
     filesystem = {
+      use_libuv_file_watcher = true,
+      filtered_items = {
+        visible = true,
+      },
       window = {
         mappings = {
           ['\\'] = 'close_window',
