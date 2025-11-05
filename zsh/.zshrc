@@ -72,7 +72,8 @@ ZSH_THEME="robbyrussell"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(git tmux)
 
-ZSH_TMUX_AUTOSTART=true
+ZSH_TMUX_AUTOSTART=false
+ZSH_TMUX_AUTONAME_SESSION=true
 
 source $ZSH/oh-my-zsh.sh
 source <(kubectl completion zsh)
