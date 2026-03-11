@@ -37,6 +37,9 @@ source $ZSH/oh-my-zsh.sh
 
 # --- User Configuration ---
 
+# Bitwarden SSH Agent (installed with .dmg package)
+export SSH_AUTH_SOCK=/Users/noambe/.bitwarden-ssh-agent.sock
+
 # Vi mode
 set -o vi
 
