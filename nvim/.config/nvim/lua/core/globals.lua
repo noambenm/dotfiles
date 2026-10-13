@@ -13,3 +13,12 @@ vim.filetype.add({
     tf = "terraform"
   }
 })
+
+-- Polyfill for vim.lsp.codelens.enable missing in Neovim 0.11
+if vim.lsp and vim.lsp.codelens and not vim.lsp.codelens.enable then
+  vim.lsp.codelens.enable = function(enable, opts)
+    if enable and vim.lsp.codelens.refresh then
+      pcall(vim.lsp.codelens.refresh, opts)
+    end
+  end
+end

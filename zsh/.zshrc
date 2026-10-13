@@ -50,7 +50,7 @@ alias vim=nvim
 # Google Cloud SDK
 if [ -f "$HOME/google-cloud-sdk/path.zsh.inc" ]; then . "$HOME/google-cloud-sdk/path.zsh.inc"; fi
 if [ -f "$HOME/google-cloud-sdk/completion.zsh.inc" ]; then . "$HOME/google-cloud-sdk/completion.zsh.inc"; fi
-export GOOGLE_CLOUD_PROJECT=noambesandbox
+export GOOGLE_CLOUD_PROJECT=noambe-sandbox
 
 # Terraform (Requires bashcompinit)
 autoload -U +X bashcompinit && bashcompinit
@@ -68,3 +68,12 @@ fi
 alias cilium='cilium --namespace cilium'
 
 # Add any other aliases below
+
+
+# Added by Antigravity CLI installer
+export PATH="/Users/noambe/.local/bin:$PATH"
+# The following lines have been added by Docker Desktop to enable Docker CLI completions.
+fpath=(/Users/noambe/.docker/completions $fpath)
+autoload -Uz compinit
+compinit
+# End of Docker CLI completions

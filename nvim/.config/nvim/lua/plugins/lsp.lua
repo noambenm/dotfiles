@@ -220,7 +220,13 @@ return {
         -- But for many setups, the LSP (`ts_ls`) will work just fine
         -- ts_ls = {},
         --
-        terraformls = {},
+        terraformls = {
+          on_attach = function(_, bufnr)
+            if vim.lsp.codelens and vim.lsp.codelens.enable then
+              vim.lsp.codelens.enable(true, { bufnr = bufnr })
+            end
+          end,
+        },
         pylsp = {},
         lua_ls = {
           -- cmd = { ... },
